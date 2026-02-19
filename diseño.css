@@ -41,7 +41,7 @@ body {
     list-style: none;
     position: absolute;
     padding: 0 100px;
-    transition: left 0.2s ease-out; /* Suavidad del movimiento */
+    transition: left 0.15s ease-out; /* Suavidad del movimiento */
 }
 
 .linea li {
