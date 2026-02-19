@@ -243,7 +243,7 @@
             const maxMove = cont.offsetWidth - l.scrollWidth;
             const sensitivity = 0.3;
             const percent = mouseX / cont.offsetWidth;
-            let targetPos = percent * maxMove * sensitivity;
+            let targetPos = percent * maxMove;
             l.style.left = targetPos + "px";
         }
     });
