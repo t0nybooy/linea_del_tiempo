@@ -241,10 +241,9 @@
             const contRect = cont.getBoundingClientRect();
             const mouseX = e.clientX - contRect.left;
             const maxMove = cont.offsetWidth - l.scrollWidth;
-            const sensitivity = 0.3;
             const percent = mouseX / cont.offsetWidth;
             let targetPos = percent * maxMove;
-            l.style.left = targetPos + "px";
+            l.style.left = (targetPos * 0.5) + "px";
         }
     });
 
