@@ -235,17 +235,17 @@
     const l = document.getElementById('linea');
     const cards = document.querySelectorAll('.info');
 
-    const sensitivity = 0.3;
+    let current = 0;
     // Función para mover la línea (Desktop)
     cont.addEventListener('mousemove', (e) => {
         if (window.innerWidth > 768) { // Solo si es escritorio
             const contRect = cont.getBoundingClientRect();
             const mouseX = e.clientX - contRect.left;
             const maxMove = cont.offsetWidth - l.scrollWidth;
-            const adjustedX = mouseX * sensitivity;
-            const percent = adjustedX / cont.offsetWidth;
+            const percent = mouseX / cont.offsetWidth;
             let targetPos = percent * maxMove;
-            l.style.left = targetPos + "px";
+            current += (targetPos - current) * 0.08;
+            l.style.left = current + "px";
         }
     });
 
