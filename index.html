@@ -235,7 +235,6 @@
     const l = document.getElementById('linea');
     const cards = document.querySelectorAll('.info');
 
-    let current = 0;
     // Función para mover la línea (Desktop)
     cont.addEventListener('mousemove', (e) => {
         if (window.innerWidth > 768) { // Solo si es escritorio
@@ -244,8 +243,7 @@
             const maxMove = cont.offsetWidth - l.scrollWidth;
             const percent = mouseX / cont.offsetWidth;
             let targetPos = percent * maxMove;
-            current += (targetPos - current) * 0.08;
-            l.style.left = current + "px";
+            l.style.left = targetPos + "px";
         }
     });
 
